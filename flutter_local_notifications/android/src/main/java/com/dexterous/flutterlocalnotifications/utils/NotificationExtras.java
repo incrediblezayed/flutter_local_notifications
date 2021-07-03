@@ -1,3 +1,4 @@
+/*
 package com.dexterous.flutterlocalnotifications.utils;
 
 import android.app.Notification;
@@ -19,6 +20,7 @@ public final class NotificationExtras {
     // Method reference to Notification.Builder#makeContentView
    // private static final Method MAKE_CONTENT_VIEW_METHOD;
 
+*/
 /*    static {
         Method m = null;
         try {
@@ -28,13 +30,16 @@ public final class NotificationExtras {
             e.printStackTrace();
         }
         MAKE_CONTENT_VIEW_METHOD = m;
-    }*/
+    }*//*
+
 
     private NotificationExtras() {
         // no instance
     }
 
-    /* Public */
+    */
+/* Public *//*
+
 
     public static Notification buildWithBackgroundResource(Context context, NotificationCompat.Builder builder, int res) {
         RemoteViews remoteViews = obtainRemoteViews(builder);
@@ -68,12 +73,14 @@ public final class NotificationExtras {
         return notification;
     }
 
-    /* Private */
+    */
+/* Private *//*
+
 
     private static RemoteViews obtainRemoteViews(NotificationCompat.Builder builder) {
         try {
             // Explicitly force creation of the content view and re-assign it to the notification
-            RemoteViews remoteViews = (RemoteViews) MAKE_CONTENT_VIEW_METHOD.invoke(builder);
+            RemoteViews remoteViews = //(RemoteViews) MAKE_CONTENT_VIEW_METHOD.invoke(builder);
             builder.setContent(remoteViews);
             return remoteViews;
 
@@ -100,4 +107,4 @@ public final class NotificationExtras {
             remoteViews.setTextColor(view.getId(), color);
         }
     }
-}
+}*/

@@ -218,13 +218,13 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
         setProgress(notificationDetails, builder);
         setCategory(notificationDetails, builder);
         setTimeoutAfter(notificationDetails, builder);
-        Notification notification = NotificationExtras.buildWithBackgroundColor(context, builder, notificationDetails.backgroundColor);
+        Notification notification = builder.build();
+        //NotificationExtras.buildWithBackgroundColor(context, builder, notificationDetails.backgroundColor);
         if (notificationDetails.additionalFlags != null && notificationDetails.additionalFlags.length > 0) {
             for (int additionalFlag : notificationDetails.additionalFlags) {
                 notification.flags |= additionalFlag;
             }
         }
-
         return notification;
     }
 
