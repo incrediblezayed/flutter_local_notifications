@@ -50,7 +50,7 @@ class AndroidNotificationDetails {
     this.additionalFlags,
     this.subText,
     this.tag,
-    this.backgroundColor = const Color(0x0fffffff),
+    this.backgroundColor = false,
   });
 
   /// The icon that should be used when displaying the notification.
@@ -282,5 +282,5 @@ class AndroidNotificationDetails {
   final String? tag;
 
   ///
-  final Color backgroundColor;
+  final bool backgroundColor;
 }

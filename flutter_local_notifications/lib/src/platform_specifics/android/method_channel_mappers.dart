@@ -251,10 +251,7 @@ extension AndroidNotificationDetailsMapper on AndroidNotificationDetails {
         'additionalFlags': additionalFlags,
         'subText': subText,
         'tag': tag,
-    'backgroundColorAlpha' : backgroundColor.alpha,
-    'backgroundColorRed': backgroundColor.red,
-    'backgroundColorGreen':backgroundColor.green,
-    'backgroundColorBlue': backgroundColor.blue,
+    'backgroundColor' : backgroundColor,
       }
         ..addAll(_convertStyleInformationToMap())
         ..addAll(_convertNotificationSoundToMap(sound))
