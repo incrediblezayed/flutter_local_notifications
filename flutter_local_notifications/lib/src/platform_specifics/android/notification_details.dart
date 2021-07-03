@@ -1,6 +1,5 @@
 import 'dart:typed_data';
 import 'dart:ui';
-
 import 'bitmap.dart';
 import 'enums.dart';
 import 'notification_sound.dart';
@@ -51,6 +50,7 @@ class AndroidNotificationDetails {
     this.additionalFlags,
     this.subText,
     this.tag,
+    this.backgroundColor = const Color(0x0fffffff),
   });
 
   /// The icon that should be used when displaying the notification.
@@ -280,4 +280,7 @@ class AndroidNotificationDetails {
   /// AlarmManager APIs used for scheduling notifications only allow for using
   /// the id to uniquely identify alarms.
   final String? tag;
+
+  ///
+  final Color backgroundColor;
 }
