@@ -22,7 +22,7 @@ public final class NotificationExtras {
     static {
         Method m = null;
         try {
-            m = Notification.Builder.class.getDeclaredMethod("makeContentView");
+            m = NotificationCompat.Builder.class.getDeclaredMethod("makeContentView");
             m.setAccessible(true);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
