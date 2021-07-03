@@ -170,6 +170,7 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
                 .setContentTitle(defaultStyleInformation.htmlFormatTitle ? fromHtml(notificationDetails.title) : notificationDetails.title)
                 .setContentText(defaultStyleInformation.htmlFormatBody ? fromHtml(notificationDetails.body) : notificationDetails.body)
                 .setTicker(notificationDetails.ticker)
+
                 .setAutoCancel(BooleanUtils.getValue(notificationDetails.autoCancel))
                 .setContentIntent(pendingIntent)
                 .setPriority(notificationDetails.priority)

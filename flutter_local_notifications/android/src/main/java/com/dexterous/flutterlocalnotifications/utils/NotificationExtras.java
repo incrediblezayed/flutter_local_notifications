@@ -17,9 +17,9 @@ import java.lang.reflect.Method;
 public final class NotificationExtras {
 
     // Method reference to Notification.Builder#makeContentView
-    private static final Method MAKE_CONTENT_VIEW_METHOD;
+   // private static final Method MAKE_CONTENT_VIEW_METHOD;
 
-    static {
+/*    static {
         Method m = null;
         try {
             m = NotificationCompat.Builder.class.getDeclaredMethod("makeContentView");
@@ -28,7 +28,7 @@ public final class NotificationExtras {
             e.printStackTrace();
         }
         MAKE_CONTENT_VIEW_METHOD = m;
-    }
+    }*/
 
     private NotificationExtras() {
         // no instance
@@ -37,7 +37,6 @@ public final class NotificationExtras {
     /* Public */
 
     public static Notification buildWithBackgroundResource(Context context, NotificationCompat.Builder builder, int res) {
-        if (MAKE_CONTENT_VIEW_METHOD == null) return buildNotification(builder);
         RemoteViews remoteViews = obtainRemoteViews(builder);
         Notification notification = buildNotification(builder);
 
