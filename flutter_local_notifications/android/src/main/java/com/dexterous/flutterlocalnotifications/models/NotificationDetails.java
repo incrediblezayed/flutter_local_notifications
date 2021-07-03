@@ -150,7 +150,7 @@ public class NotificationDetails {
     public Boolean ongoing;
     public Integer day;
     public Integer color;
-    public boolean backgroundColor;
+    public Boolean backgroundColor;
     public String largeIcon;
     public BitmapSource largeIconBitmapSource;
     public Boolean onlyAlertOnce;
