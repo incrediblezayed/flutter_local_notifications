@@ -119,10 +119,7 @@ public class NotificationDetails {
     private static final String SHORTCUT_ID = "shortcutId";
     private static final String SUB_TEXT = "subText";
 
-    private static final String BACKGROUND_COLOR_ALPHA = "backgroundColorAlpha";
-    private static final String BACKGROUND_COLOR_RED = "backgroundColorRed";
-    private static final String BACKGROUND_COLOR_GREEN = "backgroundColorGreen";
-    private static final String BACKGROUND_COLOR_BLUE = "backgroundColorBlue";
+    private static final String BACKGROUND_COLOR = "backgroundColor";
 
     public Integer id;
     public String title;
@@ -153,7 +150,7 @@ public class NotificationDetails {
     public Boolean ongoing;
     public Integer day;
     public Integer color;
-    public Integer backgroundColor;
+    public boolean backgroundColor;
     public String largeIcon;
     public BitmapSource largeIconBitmapSource;
     public Boolean onlyAlertOnce;
@@ -197,6 +194,7 @@ public class NotificationDetails {
         notificationDetails.body = (String) arguments.get(BODY);
         notificationDetails.scheduledDateTime = (String) arguments.get(SCHEDULED_DATE_TIME);
         notificationDetails.timeZoneName = (String) arguments.get(TIME_ZONE_NAME);
+        notificationDetails.backgroundColor = (boolean) arguments.get(BACKGROUND_COLOR);
         if(arguments.containsKey(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)) {
             notificationDetails.scheduledNotificationRepeatFrequency = ScheduledNotificationRepeatFrequency.values()[(Integer) arguments.get(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)];
         }
@@ -245,7 +243,6 @@ public class NotificationDetails {
             notificationDetails.usesChronometer = (Boolean) platformChannelSpecifics.get(USES_CHRONOMETER);
             readProgressInformation(notificationDetails, platformChannelSpecifics);
             readColor(notificationDetails, platformChannelSpecifics);
-            readBackgroundColor(notificationDetails, platformChannelSpecifics);
             readChannelInformation(notificationDetails, platformChannelSpecifics);
             readLedInformation(notificationDetails, platformChannelSpecifics);
             readLargeIconInformation(notificationDetails, platformChannelSpecifics);
@@ -319,16 +316,6 @@ public class NotificationDetails {
         Integer b = (Integer) platformChannelSpecifics.get(COLOR_BLUE);
         if (a != null && r != null && g != null && b != null) {
             notificationDetails.color = Color.argb(a, r, g, b);
-        }
-    }
-
-    private static void readBackgroundColor(NotificationDetails notificationDetails, Map<String, Object> platformChannelSpecifics) {
-        Integer a = (Integer) platformChannelSpecifics.get(BACKGROUND_COLOR_ALPHA);
-        Integer r = (Integer) platformChannelSpecifics.get(BACKGROUND_COLOR_RED);
-        Integer g = (Integer) platformChannelSpecifics.get(BACKGROUND_COLOR_GREEN);
-        Integer b = (Integer) platformChannelSpecifics.get(BACKGROUND_COLOR_BLUE);
-        if (a != null && r != null && g != null && b != null) {
-            notificationDetails.backgroundColor = Color.argb(a, r, g, b);
         }
     }
 
