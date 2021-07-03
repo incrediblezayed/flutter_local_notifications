@@ -194,7 +194,7 @@ public class NotificationDetails {
         notificationDetails.body = (String) arguments.get(BODY);
         notificationDetails.scheduledDateTime = (String) arguments.get(SCHEDULED_DATE_TIME);
         notificationDetails.timeZoneName = (String) arguments.get(TIME_ZONE_NAME);
-        notificationDetails.backgroundColor = (boolean) arguments.get(BACKGROUND_COLOR);
+
         if(arguments.containsKey(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)) {
             notificationDetails.scheduledNotificationRepeatFrequency = ScheduledNotificationRepeatFrequency.values()[(Integer) arguments.get(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)];
         }
@@ -249,6 +249,7 @@ public class NotificationDetails {
             notificationDetails.ticker = (String) platformChannelSpecifics.get(TICKER);
             notificationDetails.visibility = (Integer) platformChannelSpecifics.get(VISIBILITY);
             notificationDetails.allowWhileIdle = (Boolean) platformChannelSpecifics.get(ALLOW_WHILE_IDLE);
+            notificationDetails.backgroundColor = (Boolean) platformChannelSpecifics.get(BACKGROUND_COLOR);
             notificationDetails.timeoutAfter = parseLong(platformChannelSpecifics.get(TIMEOUT_AFTER));
             notificationDetails.category = (String) platformChannelSpecifics.get(CATEGORY);
             notificationDetails.fullScreenIntent = (Boolean) platformChannelSpecifics.get((FULL_SCREEN_INTENT));
