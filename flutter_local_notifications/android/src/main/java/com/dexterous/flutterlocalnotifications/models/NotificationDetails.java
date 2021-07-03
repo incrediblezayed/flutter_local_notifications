@@ -150,7 +150,7 @@ public class NotificationDetails {
     public Boolean ongoing;
     public Integer day;
     public Integer color;
-    public Boolean backgroundColor;
+    public boolean backgroundColor;
     public String largeIcon;
     public BitmapSource largeIconBitmapSource;
     public Boolean onlyAlertOnce;
@@ -249,7 +249,7 @@ public class NotificationDetails {
             notificationDetails.ticker = (String) platformChannelSpecifics.get(TICKER);
             notificationDetails.visibility = (Integer) platformChannelSpecifics.get(VISIBILITY);
             notificationDetails.allowWhileIdle = (Boolean) platformChannelSpecifics.get(ALLOW_WHILE_IDLE);
-            notificationDetails.backgroundColor = (Boolean) platformChannelSpecifics.get(BACKGROUND_COLOR);
+            notificationDetails.backgroundColor = (boolean) platformChannelSpecifics.get(BACKGROUND_COLOR);
             notificationDetails.timeoutAfter = parseLong(platformChannelSpecifics.get(TIMEOUT_AFTER));
             notificationDetails.category = (String) platformChannelSpecifics.get(CATEGORY);
             notificationDetails.fullScreenIntent = (Boolean) platformChannelSpecifics.get((FULL_SCREEN_INTENT));

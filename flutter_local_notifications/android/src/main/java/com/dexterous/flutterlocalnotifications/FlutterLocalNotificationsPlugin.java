@@ -170,7 +170,7 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
                 .setContentTitle(defaultStyleInformation.htmlFormatTitle ? fromHtml(notificationDetails.title) : notificationDetails.title)
                 .setContentText(defaultStyleInformation.htmlFormatBody ? fromHtml(notificationDetails.body) : notificationDetails.body)
                 .setTicker(notificationDetails.ticker)
-.setColorized(notificationDetails.backgroundColor)
+
                 .setAutoCancel(BooleanUtils.getValue(notificationDetails.autoCancel))
                 .setContentIntent(pendingIntent)
                 .setPriority(notificationDetails.priority)
@@ -183,6 +183,7 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
         }
         if (notificationDetails.color != null) {
             builder.setColor(notificationDetails.color.intValue());
+            builder.setColorized(notificationDetails.backgroundColor);
         }
 
         if (notificationDetails.showWhen != null) {
